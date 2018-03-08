@@ -1,4 +1,4 @@
-# testproj
+# UW Vue Project
 
 > A Vue.js project
 
