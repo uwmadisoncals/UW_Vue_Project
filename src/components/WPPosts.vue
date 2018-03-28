@@ -1,8 +1,9 @@
 <template>
-  <div class="hello">
-    <h1>Posts</h1>
+  <div class="wpPosts">
+    <h1>News</h1>
     
-    <postitem :posts = 'thePosts' />
+    <spinner :loading = 'isLoading' />
+    <showposts :posts = 'thePosts' />
     
     <ul v-if="errors && errors.length">
         <li v-for="error of errors">
@@ -14,33 +15,49 @@
 
 <script>
 import axios from 'axios'
-import postitem from './PostItem.vue'
+import postitems from './PostItem.vue'
+import spinner from './Spinner.vue'
 
 export default {
   name: 'wpposts',
   data () {
     return {
       thePosts: [],
-      errors: []
+      errors: [],
+      headertheme: 'poststheme',
+      isLoading: 'no'
     }
   },
   components: {
-    'postitem': postitem
+    'showposts': postitems,
+    'spinner': spinner
   },
   created: function () {
-    axios.get(`https://alnemec.com/wp-json/wp/v2/posts/?_embed`)
+    //change site theme for page
+    this.changeTheme()
+
+    this.isLoading = 'yes';
+
+    //retrieve posts
+    axios.get(`https://news.wisc.edu/wp-json/wp/v2/posts/?_embed`)
     .then(response => {
       // JSON responses are automatically parsed.
       this.thePosts = response.data
+      this.isLoading = 'no';
     })
     .catch(e => {
       this.errors.push(e)
     })
+  },
+  methods: {
+    changeTheme: function () {
+      this.$emit('changeSiteTheme', this.headertheme)
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 h1, h2 {
   font-weight: normal;

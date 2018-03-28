@@ -25,8 +25,17 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      headertheme: 'defaulttheme'
     }
+  },
+  methods: {
+    changeTheme: function () {
+      this.$emit('changeSiteTheme', this.headertheme)
+    }
+  },
+  created: function () {
+    this.changeTheme()
   }
 }
 </script>
