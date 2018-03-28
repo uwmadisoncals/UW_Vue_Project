@@ -12,12 +12,11 @@
 
 <script>
 export default {
-    name: 'homeheader'
-}
+  name: "homeheader"
+};
 </script>
 
 
 <style>
 /* no styles yet! */
-
 </style>

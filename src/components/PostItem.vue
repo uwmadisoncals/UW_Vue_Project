@@ -21,7 +21,7 @@
           <v-btn flat color="orange">Explore</v-btn>
         </v-card-actions>
       </v-card>
-    
+
     </v-flex>
   </v-layout>
 </v-container>
@@ -30,15 +30,13 @@
 
 <script>
 export default {
-  name: 'postitems',
-  props: ['posts']
-}
-
+  name: "postitems",
+  props: ["posts"]
+};
 </script>
 
 
 <style scoped>
-
 /* Blog Styles */
 
 .blogCardWrapper {
@@ -49,14 +47,14 @@ export default {
 .blogCard {
   position: relative;
   display: inline-block;
-    background:#fff;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
-    margin:30px 0 0 2%;
-    flex-grow: 1;
-    height:auto;
-    padding: 2rem;
-    border-radius: 6px;
-    width: calc(100% * (1/4) - 10px - 1px);
+  background: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  margin: 30px 0 0 2%;
+  flex-grow: 1;
+  height: auto;
+  padding: 2rem;
+  border-radius: 6px;
+  width: calc(100% * (1/4) - 10px - 1px);
 }
 
 .blogCard h2 {
@@ -83,7 +81,7 @@ export default {
   left: 0px;
   right: 0px;
   bottom: 0px;
-  z-index:5;
+  z-index: 5;
   font-size: 0px;
   border-radius: 6px;
   text-indent: -10000000px;
@@ -99,7 +97,7 @@ export default {
   left: 0px;
   right: 0px;
   bottom: 0px;
-  z-index:2;
+  z-index: 2;
 }
 
 .imgLoadCheck {
@@ -112,7 +110,7 @@ export default {
   left: 0px;
   right: 0px;
   bottom: -100px;
-  z-index:3;
+  z-index: 3;
   filter: blur(18px);
   opacity: 1;
   transition: opacity 1s;
