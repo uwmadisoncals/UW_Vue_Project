@@ -1,35 +1,36 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    
+
     <v-date-picker v-model="picker"></v-date-picker>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'about',
-  data () {
+  name: "about",
+  data() {
     return {
-      msg: 'About Your Vue.js App',
-      headertheme: 'abouttheme',
+      msg: "About Your Vue.js App",
+      headertheme: "abouttheme",
       picker: null
-    }
+    };
   },
   methods: {
-    changeTheme: function () {
-      this.$emit('changeSiteTheme', this.headertheme)
+    changeTheme: function() {
+      this.$emit("changeSiteTheme", this.headertheme);
     }
   },
-  created: function () {
-    this.changeTheme()
+  created: function() {
+    this.changeTheme();
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 

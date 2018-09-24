@@ -22,27 +22,28 @@
 
 <script>
 export default {
-  name: 'hello',
-  data () {
+  name: "hello",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      headertheme: 'defaulttheme'
-    }
+      msg: "Welcome to Your Vue.js App",
+      headertheme: "defaulttheme"
+    };
   },
   methods: {
-    changeTheme: function () {
-      this.$emit('changeSiteTheme', this.headertheme)
+    changeTheme: function() {
+      this.$emit("changeSiteTheme", this.headertheme);
     }
   },
-  created: function () {
-    this.changeTheme()
+  created: function() {
+    this.changeTheme();
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 
